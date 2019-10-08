@@ -1,0 +1,210 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package forumlamethods;
+
+/**
+ *
+ * @author Cesar Rodriguez
+ */
+import java.util.Scanner;
+public class ForumlaMethods 
+{
+    
+  public static void main(String[] args) 
+  {
+      
+	System.out.println("Enter values for a, b and c");
+        
+	double a = convertToDouble(getValue());
+        
+	double b = convertToDouble(getValue());
+        
+	double c = convertToDouble(getValue());
+        
+	double discriminant = calculateDiscriminant(a, b, c);
+        
+	outputEquation(a, b, c);
+        
+	if(isPositive(discriminant) || numberOfRoots(discriminant)==2) outputTwoRoots(a, b, discriminant);
+        
+	else if (isZero(discriminant) || numberOfRoots(discriminant)==1) outputOneRoot(a, b, discriminant);
+        
+	else if (isNegative(discriminant) || numberOfRoots(discriminant)==0) noRoots();
+
+  }
+
+  public static int getValue()
+  {
+      
+    Scanner input = new Scanner(System.in);
+    int number = input.nextInt();
+    return number;
+
+  }
+
+  public static double convertToDouble(int integernum)
+  {
+      
+      double doublenum = integernum;
+      return doublenum;
+     
+  }
+
+    public static int numberOfRoots(double discriminant)
+  {
+      
+      int number = 1;
+      
+      if (discriminant > 0)
+      {
+          number = 0;
+      }
+      else if (discriminant < 0)
+      {
+          number = 1;
+      }
+      else if (discriminant == 0)
+      {
+          number = 2;
+      }
+      
+      return number;
+     
+  }
+  
+  
+  public static double calculateDiscriminant(double a, double b, double c)
+  {
+      
+    return (Math.pow(b,2)- 4 * a * c);
+
+  }
+  
+  public static boolean isPositive(double number)
+  {
+
+      boolean positive;
+      
+      if (number > 0)
+      {
+          return (positive = true);
+      }
+      else
+      {
+          return (positive = false);
+      }
+
+  }
+  
+  public static boolean isNegative(double number)
+  {
+      
+      boolean negative;
+      
+      if (number < 0)
+      {
+          return (negative = true);
+      }
+      else
+      {
+          return (negative = false);
+      }
+      
+  }
+  
+  public static boolean isZero(double number)
+  {
+      
+      boolean zero;
+      
+      if (number == 0)
+      {
+          return (zero = true);
+      }
+      else
+      {
+          return (zero = false);
+      }
+      
+  }
+  
+  public static double calculateSquareRoot(double number)
+  {
+  
+      number = Math.sqrt(number);
+      return number;
+  
+  }
+  
+  public static double squareIt(double number)
+  {
+  
+      number = Math.pow(number,2);
+      return number;
+  
+  }
+
+  public static double outputTwoRoots(double a, double b, double discriminant)
+  {
+  
+      
+  
+  }
+  
+  public static double outputOneRoots(double a, double b, double discriminant)
+  {
+  
+      number = Math.pow(number,2);
+      return number;
+  
+  }
+  
+  public static String noRoots()
+  {
+  
+      return "No roots for equation";
+ 
+  }
+  
+  public static double outputEquation(double a, double b, double c)
+  {
+      if (isPositive = true)
+      {
+        return (-b + Math.sqrt(Math.pow(b,2)- 4 * a * c))/ 2 * a;  
+      }
+      else if (isNegative = true)
+      {
+        return (-b * - Math.sqrt(Math.pow(b,2)- 4 * a * c))/ 2 * a;  
+      }
+      else
+      {
+          return 0;
+      }
+ 
+  }
+  
+  public static String outputRoot1()
+  {
+  
+      return "No roots for equation";
+ 
+  }
+  
+  public static String outputRoot2()
+  {
+  
+      return "No roots for equation";
+ 
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+}
